@@ -1,8 +1,4 @@
 package styles;
-
-import styles.FontUtil;
-import styles.RoundBorder;
-
 import javax.swing.*;
 import javax.swing.text.AttributeSet;
 import javax.swing.text.BadLocationException;
@@ -12,6 +8,9 @@ import java.awt.*;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
 
+/**
+ * The type Txt field ph.
+ */
 public class TxtFieldPh extends JTextField {
     private String txtPlaceholder;
     private int limit;
@@ -20,6 +19,15 @@ public class TxtFieldPh extends JTextField {
     private int fontSize;
     private int cornerRadius;
 
+    /**
+     * Instantiates a new Txt field ph.
+     *
+     * @param txtPlaceholder the txt placeholder
+     * @param width          the width
+     * @param height         the height
+     * @param fontSize       the font size
+     * @param cornerRadius   the corner radius
+     */
     public TxtFieldPh(String txtPlaceholder, int width, int height, int fontSize, int cornerRadius) {
         this.txtPlaceholder = txtPlaceholder;
         this.width = width;
@@ -33,6 +41,16 @@ public class TxtFieldPh extends JTextField {
         setOpaque(false);
     }
 
+    /**
+     * Instantiates a new Txt field ph.
+     *
+     * @param txtPlaceholder the txt placeholder
+     * @param limit          the limit
+     * @param width          the width
+     * @param height         the height
+     * @param fontSize       the font size
+     * @param cornerRadius   the corner radius
+     */
     public TxtFieldPh(String txtPlaceholder, int limit, int width, int height, int fontSize, int cornerRadius) {
         this.txtPlaceholder = txtPlaceholder;
         this.limit = limit;
@@ -71,6 +89,9 @@ public class TxtFieldPh extends JTextField {
 
     }
 
+    /**
+     * Verify focus.
+     */
     public void verifyFocus() {
         FocusListener myFocusListener = new FocusListener() {
             @Override
