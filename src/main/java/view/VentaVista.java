@@ -25,8 +25,8 @@ public class VentaVista extends JFrame implements IObservador {
     private DefaultTableModel modeloTabla;
     private Button btnAgregar, btnQuitar, btnFinalizar;
 
-    private IVentaLectura modeloLectura;
-    private VentaControlador controlador;
+    private final IVentaLectura modeloLectura;
+    private final VentaControlador controlador;
 
     public VentaVista(IVentaLectura modeloLectura, VentaControlador controlador) {
         this.modeloLectura = modeloLectura;
