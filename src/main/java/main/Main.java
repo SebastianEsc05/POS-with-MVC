@@ -9,7 +9,7 @@ public class Main {
     public static void main(String[] args){
         VentaModelo modelo = new VentaModelo();
         VentaControlador controlador = new VentaControlador(modelo);
-        VentaVista vista = new VentaVista(modelo,controlador);
+        VentaVista vista = new VentaVista(controlador);
         modelo.agregarObservador(vista);
         vista.setVisible(true);
     }

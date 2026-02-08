@@ -17,19 +17,16 @@ import javax.swing.table.JTableHeader;
 import java.awt.*;
 import java.util.List;
 
-public class VentaVista extends JFrame implements IObservador {
+public class VentaVista extends JFrame implements IObservador{
 
     private TxtFieldPh txtNombre, txtCantidad, txtPrecio, txtPago;
     private JLabel lblTotal, lblCambio;
     private JTable tablaProductos;
     private DefaultTableModel modeloTabla;
     private Button btnAgregar, btnQuitar, btnFinalizar;
-
-    private final IVentaLectura modeloLectura;
     private final VentaControlador controlador;
 
-    public VentaVista(IVentaLectura modeloLectura, VentaControlador controlador) {
-        this.modeloLectura = modeloLectura;
+    public VentaVista(VentaControlador controlador) {
         this.controlador = controlador;
         startComponents();
     }
@@ -200,9 +197,9 @@ public class VentaVista extends JFrame implements IObservador {
     }
 
     @Override
-    public void actualizar() {
+    public void actualizar(IVentaLectura context) {
         modeloTabla.setRowCount(0);
-        List<Producto> lista = modeloLectura.getListaProductos();
+        List<Producto> lista = context.getListaProductos();
 
         for(Producto producto : lista){
             modeloTabla.addRow(new Object[]{
@@ -213,10 +210,10 @@ public class VentaVista extends JFrame implements IObservador {
             });
         }
 
-        lblTotal.setText("Total: $" + modeloLectura.getTotal());
+        lblTotal.setText("Total: $" + context.getTotal());
 
         if(lista.isEmpty()){
-            double cambio = modeloLectura.getCambio();
+            double cambio = context.getCambio();
             lblCambio.setText("Cambio última venta: $" + cambio);
 
             if (cambio > 0) {

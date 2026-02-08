@@ -85,7 +85,7 @@ public class VentaModelo implements IVentaLectura,ISujeto, IVentaModelo {
     @Override
     public void notificarObservadores() {
         for(IObservador observador: observadores){
-            observador.actualizar();
+            observador.actualizar(this);
         }
     }
 }

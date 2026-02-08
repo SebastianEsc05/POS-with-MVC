@@ -1,5 +1,5 @@
 package interfaces;
 
 public interface IObservador {
-    void actualizar();
+    void actualizar(IVentaLectura context);
 }
