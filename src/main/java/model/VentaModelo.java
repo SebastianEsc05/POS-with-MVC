@@ -3,11 +3,12 @@ package model;
 import interfaces.IObservador;
 import interfaces.ISujeto;
 import interfaces.IVentaLectura;
+import interfaces.IVentaModelo;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class VentaModelo implements IVentaLectura,ISujeto {
+public class VentaModelo implements IVentaLectura,ISujeto, IVentaModelo {
     private List<Producto> productos;
     private double ultimoCambio;
 
